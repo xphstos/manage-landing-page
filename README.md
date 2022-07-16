@@ -6,4 +6,4 @@ This is a solution to the [Manage landing page challenge on Frontend Mentor](htt
 ### Links
 
 - Solution URL: [https://github.com/xphstos/manage-landing-page](https://github.com/xphstos/manage-landing-page)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [f0a7dc5702e562770912ae3287772db77385fcb9.surge.sh](https://f0a7dc5702e562770912ae3287772db77385fcb9.surge.sh)
