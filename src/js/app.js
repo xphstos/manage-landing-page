@@ -12,6 +12,8 @@ const slider = new Splide(SPLIDE, {
   perPage: 3,
   arrows: false,
   pagination: false,
+  label: "testimonials",
+  rope: "group",
   breakpoints: {
     1024: {
       perPage: 2,

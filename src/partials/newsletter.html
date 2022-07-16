@@ -1,9 +1,18 @@
 <form class="newsletter {{ classname }}">
-  <label class="newsletter__label" for="id">
-    Updates in your inbox
-  </label>
-  <input class="newsletter__input" type="text" placeholder="Updates in your inbox..." name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-  <button class="newsletter__submit btn btn--primary" type="submit" onclick=";return false">
+  <label class="newsletter__label" for="email"> Updates in your inbox </label>
+  <input
+    class="newsletter__input"
+    type="text"
+    placeholder="Updates in your inbox..."
+    name="email"
+    id="email"
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+  />
+  <button
+    class="newsletter__submit btn btn--primary"
+    type="submit"
+    onclick=";return false"
+  >
     Go
   </button>
 </form>
