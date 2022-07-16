@@ -1,0 +1,26 @@
+@use '../functions' as *;
+@use '../helpers' as *;
+
+.section--cta {
+  background: url('../images/bg-simplify-section-desktop.svg') no-repeat 20vw 100% / cover, v('accent');
+  color: v('white');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    background: url('../images/bg-simplify-section-mobile.svg') no-repeat left center / contain, v('accent');
+    display: block;
+    text-align: center;
+  }
+
+  .section__title {
+    max-width: 20ch;
+
+    @media screen and (max-width: 768px) {
+      margin-inline: auto;
+      margin-bottom: .75em;
+    }
+  }
+}

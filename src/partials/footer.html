@@ -1,0 +1,49 @@
+<footer class="footer">
+  <a href="/" class="footer__homelink" title="return to home">
+    <img
+      src="./images/logo-footer.svg"
+      alt="manage logo"
+      class="footer__homelink-logo"
+    />
+  </a>
+  <include
+    src="partials/social.html"
+    locals='{
+      "classname": "footer__social"
+    }'
+  ></include>
+  <nav class="footer__nav nav" aria-label="footer-nav">
+    <ul class="nav-menu">
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Home</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Pricing</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Products</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">About us</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Careers</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Community</a>
+      </li>
+      <li class="nav-menu__item">
+        <a class="nav-menu__link">Privacy Policy</a>
+      </li>
+    </ul>
+  </nav>
+  <include
+    src="partials/newsletter.html"
+    locals='{
+    "classname": "footer__newsletter"
+  }'
+  ></include>
+  <p class="footer__copy">
+    <small> &copy; Copyright 2020. All Rights Reserved </small>
+  </p>
+</footer>

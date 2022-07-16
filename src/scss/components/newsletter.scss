@@ -1,0 +1,37 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+@use "sass:color" as *;
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  &__label {
+    @extend %sr-only;
+  }
+
+  &__input {
+  --shadow: 0 .25rem .75rem -0.15rem #{adjust(c('off-black'), $alpha: -0.8)};
+  flex: 1;
+  min-height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: 3rem;
+  display: inline-flex;
+  align-items: center;
+  background: v('white');
+  color: v('grey');
+  border: none;
+  font-family: inherit;
+  font-size: .75rem;
+  line-height: 1;
+  box-shadow: v('shadow');
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease, opacity .2s ease;
+  width: max(150px, 100%);
+  }
+
+  &__submit {
+    flex: 0;
+    --shadow: 0 .25rem .75rem -0.15rem #{adjust(c('off-black'), $alpha: -0.8)};
+  }
+}

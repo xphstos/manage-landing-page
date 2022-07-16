@@ -1,0 +1,32 @@
+@use "../functions" as *;
+@use "../mixins" as *;
+
+.toggle {
+  @include size(1.5rem);
+  padding: 0;
+  background: none;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__icon {
+    @include size(1.25rem);
+    display: inline-block;
+
+    &--close {
+      display: none;
+    }
+  }
+
+  @at-root {
+    .header--is-open {
+      .toggle__icon--close {
+        display: inline-block;
+      }
+      .toggle__icon--burger {
+        display: none;
+      }
+    }
+  }
+}

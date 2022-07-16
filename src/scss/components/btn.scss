@@ -1,0 +1,42 @@
+@use "../functions" as *;
+@use "sass:color" as *;
+
+.btn {
+  --bg: transparent;
+  --color: var(--off-black);
+  --shadow: none;
+  min-height: 3rem;
+  padding-inline: 2rem;
+  border-radius: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: v("bg");
+  color: v("color");
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: v("shadow");
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    opacity 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &--primary {
+    --bg: var(--accent);
+    --color: var(--white);
+    --shadow: 0 0.25rem 0.75rem -0.15rem #{adjust(c("accent"), $alpha: -0.2)};
+  }
+
+  &--secondary {
+    --bg: var(--white);
+    --color: var(--accent);
+    --shadow: 0 0.25rem 0.75rem -0.15rem #{adjust(c("off-black"), $alpha: -0.8)};
+  }
+}

@@ -1,0 +1,73 @@
+@use "sass:color" as *;
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.header {
+  --blur: 0rem;
+  --background: transparent;
+  --shadow: transparent;
+  @extend %container;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  transition: top 0.2s ease, background-color 0.2s ease;
+  padding-block: 1rem;
+  box-shadow: 0 1px 0 0 v("shadow");
+  background-color: v("background");
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+
+  @media screen and (max-width: 820px) {
+    top: 0;
+    padding-block: 1.5rem;
+  }
+
+  &__homelink {
+    flex: 0 0 9rem;
+    position: relative;
+    z-index: v("header-elements");
+
+    @media screen and (max-width: 820px) {
+      flex: 0 0 7rem;
+    }
+
+    &-logo {
+      vertical-align: middle;
+      transform: translateY(0.2em); // optical fix
+    }
+  }
+
+  &__toggle {
+    flex: 0 0 1.5rem;
+    margin-left: auto;
+    display: none;
+    position: relative;
+    z-index: v("header-elements");
+
+    @media screen and (max-width: 820px) {
+      display: inline-flex;
+    }
+  }
+
+  &__nav {
+    flex: 1;
+  }
+
+  &--scrolling {
+    // --blur: 0;
+    // --background: #{adjust(c("white"), $alpha: -0.2)};
+    --background: var(--white);
+    top: 0;
+
+    &.header--is-open {
+      @media screen and (max-width: 820px) {
+        --background: transparent;
+      }
+    }
+  }
+}

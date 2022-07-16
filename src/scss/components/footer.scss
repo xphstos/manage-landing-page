@@ -1,0 +1,63 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.footer {
+  @extend %container;
+  padding-block: 4rem;
+  background-color: v("off-black");
+  color: v("white");
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  grid-template-areas: "logo menu newsletter" "social menu copy";
+  gap: 1rem #{fluid-rem(2.5rem, 4rem, 768 1100)};
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "newsletter" "menu" "social" "logo" "copy";
+    gap: 2.5rem;
+  }
+
+  &__homelink {
+    grid-area: logo;
+    transform: translateY(0.5em); // optical correction
+
+    @media screen and (max-width: 768px) {
+      justify-self: center;
+    }
+  }
+
+  &__nav {
+    grid-area: menu;
+    width: 100%;
+    justify-self: center;
+
+    @media screen and (max-width: 768px) {
+      width: min(320px, 100%);
+    }
+  }
+
+  &__social {
+    grid-area: social;
+  }
+
+  &__newsletter {
+    grid-area: newsletter;
+    justify-self: center;
+  }
+
+  &__copy {
+    grid-area: copy;
+    color: v("grey");
+    align-self: end;
+    justify-self: end;
+
+    @media screen and (max-width: 768px) {
+      align-self: unset;
+      justify-self: center;
+    }
+
+    small {
+      font-size: 0.75rem;
+    }
+  }
+}

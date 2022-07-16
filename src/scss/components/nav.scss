@@ -1,0 +1,101 @@
+@use "sass:color" as *;
+@use "../functions" as *;
+
+.nav {
+  &-menu {
+    &__link {
+      white-space: nowrap;
+      font-size: 0.75rem;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+  }
+
+  &[aria-label="header-nav"] {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 820px) {
+      --background: #{adjust(c("off-black"), $alpha: -0.2)};
+      display: block;
+      position: fixed;
+      inset: 0;
+      min-height: 100vh;
+      padding-block: v("header-height") 0;
+      padding-inline: 1.5rem;
+      background: linear-gradient(to top, var(--background), transparent);
+      pointer-events: none;
+      opacity: 0;
+      backdrop-filter: blur(20px);
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+
+      @at-root {
+        .header--is-open .nav[aria-label="header-nav"] {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      @media screen and (max-width: 820px) {
+        display: block;
+        border-radius: 0.5rem;
+        background: v("white");
+        padding-block: 1.5rem;
+        transform: translateY(20%);
+        transition: transform 0.2s ease;
+
+        @at-root {
+          .header--is-open .nav[aria-label="header-nav"] .nav-menu {
+            transform: translateY(0%);
+            pointer-events: auto;
+          }
+        }
+      }
+
+      &__link {
+        padding: 0.5rem 1rem;
+        transition: opacity 0.2s ease;
+        display: block;
+
+        @media screen and (max-width: 820px) {
+          text-align: center;
+          padding: 1rem;
+        }
+
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
+
+    .nav__cta {
+      margin-left: auto;
+
+      @media screen and (max-width: 820px) {
+        display: none;
+      }
+    }
+  }
+
+  &[aria-label="footer-nav"] {
+    .nav-menu {
+      columns: 2;
+
+      &__link {
+        padding: 0 0.5rem;
+
+        &:hover {
+          color: v("accent");
+        }
+      }
+    }
+  }
+}

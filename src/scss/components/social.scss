@@ -1,0 +1,31 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+@use "../mixins" as *;
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      .social__icon {
+        color: v("accent");
+      }
+    }
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: auto;
+    transition: fill 0.2s ease, color .2s ease;
+    vertical-align: middle;
+  }
+}
