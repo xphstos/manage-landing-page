@@ -18,9 +18,17 @@ main {
 
 body {
   font: 400 1rem / 1.618 "Be Vietnam Pro", sans-serif;
-  background: url("../images/bg-tablet-pattern.svg") no-repeat -20rem 60% / 700px
-    auto;
   color: var(--complementary);
+  background: url("../images/bg-desktop-pattern-bottom.svg") no-repeat #{fluid-rem(
+      -20rem,
+      20rem,
+      1100 2560
+    )} 90% / auto;
+
+  @media screen and (max-width: 1100px) {
+    background: url("../images/bg-tablet-pattern.svg") no-repeat -20rem 60% / 700px
+      auto;
+  }
 
   @media screen and (max-width: 820px) {
     background: url("../images/bg-tablet-pattern.svg") no-repeat right -50vw top
