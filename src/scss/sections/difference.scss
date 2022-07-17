@@ -4,9 +4,25 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  position: relative;
 
   @media screen and (max-width: 820px) {
     display: block;
+  }
+
+  .section__background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 60%);
+    z-index: -1;
+
+    @media screen and (max-width: 820px) {
+      left: 100%;
+      bottom: 100%;
+      width: 90%;
+      transform: translate(-50%, 20%);
+    }
   }
 
   .section__header {
